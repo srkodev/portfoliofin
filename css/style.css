@@ -27,7 +27,7 @@ h1 , h2, h3 {
 }
 
 .top-pages {
-    background-image: url(/img/header2.png);
+    background-image: url(/portfoliofin/img/header2.png);
     object-fit: cover;
     height: 150px;
 }
@@ -156,7 +156,7 @@ h1 , h2, h3 {
 }
 
 .pp {
-    background-image: url(/img/pp.png);
+    background-image: url(/portfoliofin/img/pp.png);
     width: 1000px;
     height: 1000px;
     position: absolute;

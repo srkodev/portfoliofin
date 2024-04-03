@@ -1,16 +1,17 @@
 <?php
 session_start();
-require_once("/mnt/portfolio/fonction/name.php");
-require_once("/mnt/portfolio/fonction/skills.php");
-require_once("/mnt/portfolio/fonction/work.php");
+require_once(__DIR__ . "/fonction/name.php");
+require_once(__DIR__ . "/fonction/skills.php");
+require_once(__DIR__ . "/fonction/work.php");
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="css/style.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <title>Jules Crevoisier</title>
 </head>
@@ -37,7 +38,7 @@ require_once("/mnt/portfolio/fonction/work.php");
     <div class="name-pp-container">
         <?php name() ?>
         <div class="pp">
-            <img src="/img/ppn.png" alt="">
+            <img src="img/ppn.png" alt="">
         </div>
     </div>
     <?php skills() ?>
@@ -49,11 +50,11 @@ require_once("/mnt/portfolio/fonction/work.php");
             <?php if (isset($_GET['error']) && $_GET['error'] === 'captcha'): ?>
                 <div class="error-message">Erreur de captcha. Veuillez réessayer.</div>
             <?php endif; ?>
-            <form action="submit_form.php" method="post">
+            <form action="php/submit_form.php" method="post">
                 <input type="text" name="name" placeholder="Nom" required>
                 <input type="email" name="email" placeholder="Email" required>
                 <textarea name="message" placeholder="Message" required></textarea>
-                <img class="captcha-img" src="/php/captcha/captcha.php" alt="Captcha">
+                <img class="captcha-img" src="php/captcha/captcha.php" alt="Captcha">
                 <input type="text" name="captcha" placeholder="Entrez le code captcha" required>
                 <button type="submit">Envoyer</button>
             </form>
@@ -63,6 +64,6 @@ require_once("/mnt/portfolio/fonction/work.php");
         </div>
     </footer>
     </section>
-    <script src="/js/script.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>

@@ -31,7 +31,7 @@ for ($i = 0; $i < 10; $i++) {
 // Ajoutez le texte du captcha avec une police aléatoire
 $font_size = 20;
 $font_angle = rand(-15, 15);
-$font_file = '/mnt/portfolio/php/fonts/times_new_yorker.ttf'; // Remplacez par le chemin d'accès à un fichier de police TTF
+$font_file = '/mnt/portfolio/portfoliofin/php/fonts/times_new_yorker.ttf'; // Remplacez par le chemin d'accès à un fichier de police TTF
 
 do {
     $text_box = imagettfbbox($font_size, $font_angle, $font_file, $code);
