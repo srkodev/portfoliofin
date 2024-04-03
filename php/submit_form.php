@@ -1,13 +1,13 @@
 <?php
 session_start();
 
-require '/mnt/portfolio/vendor/autoload.php';
+require __DIR__ . "/../vendor/autoload.php";
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
 if (!isset($_SESSION['captcha_code'])) {
     // Redirigez l'utilisateur vers la page de formulaire avec un message d'erreur
-    header('Location: /php/index.php?error=captcha');
+    header('Location: /portfoliofin/index.php?error=captcha');
     exit();
 }
 
@@ -47,10 +47,10 @@ if ($captcha === $_SESSION['captcha_code']) {
         $title = "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
     }
 
-    header('Location: /php/notification.php?status=' . urlencode($status) . '&title=' . urlencode($title));
+    header('Location: /portfoliofin/php/notification.php?status=' . urlencode($status) . '&title=' . urlencode($title));
 } else {
     $status = 'error';
     $title = 'Captcha code is incorrect';
-    header('Location: /php/index.php?error=captcha');
+    header('Location: /portfoliofin/index.php?error=captcha');
 }
 ?>
